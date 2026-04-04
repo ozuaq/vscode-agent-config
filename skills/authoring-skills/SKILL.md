@@ -12,6 +12,7 @@ Create well-structured SKILL.md files that are concise, discoverable, and effect
 1. **Only add what Claude doesn't know** — Challenge each line: "Does this justify its token cost?"
 2. **Match freedom to fragility** — Strict steps for fragile operations, general guidance for flexible tasks
 3. **Progressive disclosure** — SKILL.md under 500 lines; split into reference files when needed
+4. **Write in English** — All SKILL.md content must be written in English for consistency and broad compatibility
 
 ## SKILL.md Structure
 
