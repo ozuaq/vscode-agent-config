@@ -43,9 +43,12 @@ Before editing any file:
 1. Present a draft of the changes to the user, clearly separated into:
    - **Plan Overview**: Confirmed direction and scope of changes
    - **Undecided Items**: Open questions or items requiring user input via `vscode_askQuestions`
-   - Present all code changes in **diff format**
+   - Present changes for **existing files** in **diff format**
+   - Present **new files** with full code blocks
+   - Include **explanatory comments** in the draft describing the intent of each change
 2. Ask via `vscode_askQuestions`: "Shall I proceed with this draft?"
 3. Do NOT edit until all "Undecided Items" are resolved and approval is given
+4. When applying changes to actual files, do NOT include the explanatory comments from the draft — keep code clean
 
 ### Terminal Command Explanation
 
@@ -56,3 +59,7 @@ Before running any command in the terminal:
    - **Purpose**: What the command does and why it's being run
    - **Breakdown**: Each sub-command and option with a detailed explanation
 2. Then execute the command in the terminal
+
+### Tmp File Scope
+
+The `./tmp/` directory contains session-specific files. Only read files under the current session's directory (`./tmp/<sessionId>/`). Never read or reference tmp files from other sessions — they are irrelevant context.
