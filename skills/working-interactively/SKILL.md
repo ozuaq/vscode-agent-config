@@ -1,6 +1,6 @@
 ---
 name: working-interactively
-description: "Collaborative workflow ensuring user confirmation at every stage. Use for all tasks."
+description: Collaborative workflow ensuring user confirmation at every stage. Use for all tasks.
 ---
 
 # Working Interactively

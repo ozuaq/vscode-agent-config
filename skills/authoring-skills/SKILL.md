@@ -1,46 +1,25 @@
 ---
 name: authoring-skills
-description: "Create and improve SKILL.md files following best practices. Use when creating, reviewing, or refining agent skills."
+description: Create and improve SKILL.md files following best practices. Use when creating, reviewing, or refining agent skills.
 ---
 
 # Authoring Skills
 
 Create well-structured SKILL.md files that are concise, discoverable, and effective.
 
-## Core Principles
+- **Write in English** — All content must be in English for broad compatibility
+- **Only add what the agent doesn't already know** — Challenge each line: "Does this justify its token cost?"
+- **Match freedom to fragility** — Strict steps for fragile operations, general guidance for flexible tasks
+- **Progressive disclosure** — Keep SKILL.md under 500 lines; split into reference files when needed
 
-1. **Only add what Claude doesn't know** — Challenge each line: "Does this justify its token cost?"
-2. **Match freedom to fragility** — Strict steps for fragile operations, general guidance for flexible tasks
-3. **Progressive disclosure** — SKILL.md under 500 lines; split into reference files when needed
-4. **Write in English** — All SKILL.md content must be written in English for consistency and broad compatibility
+## Frontmatter Guidelines
 
-## SKILL.md Structure
+- `name`: must match the folder name; lowercase with hyphens; max 64 chars; gerund form preferred (e.g. `processing-pdfs`)
+- `description`: max 1024 chars; written in third person (e.g. "Processes files", not "I help you" or "You can use this"); include WHAT the skill does AND WHEN to use it; use trigger keywords for discovery; avoid tool names and implementation details
 
-name: kebab-case-name (must match folder name, gerund form preferred, e.g. processing-pdfs)
-description: "What it does + when to use. Third person. Max 1024 chars."
+## Body Guidelines
 
-### Description Rules
-
-- Third person only ("Processes files", not "I help you" or "You can use this")
-- Include WHAT the skill does AND WHEN to use it
-- Use specific trigger keywords for discovery
-- No tool names or implementation details
-
-### Body Guidelines
-
-- Keep concise: no explanations Claude already knows
-- One level deep references only
-- Consistent terminology throughout
-- No time-sensitive information
-- Workflows: clear sequential steps with feedback loops
-
-## Checklist
-
-Before finalizing, verify:
-- name matches folder, lowercase + hyphens, max 64 chars
-- description is keyword-rich, third person, what + when
-- Body under 500 lines, additional content in reference files
-- No redundant explanations Claude already knows
-- Consistent terminology
-- File references one level deep
-- Workflows have clear steps
+- Keep under 500 lines; move overflow to reference files (one level deep)
+- Use consistent terminology throughout
+- Avoid time-sensitive information
+- For workflows, write clear sequential steps with feedback loops

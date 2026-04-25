@@ -1,6 +1,6 @@
 ---
 name: validating-frontend
-description: "Run lint, build, and format checks after file edits. Auto-fix lint and format errors, diagnose build errors. Use after creating or modifying frontend code."
+description: Run lint, build, and format checks after file edits. Auto-fix lint and format errors, diagnose build errors. Use after creating or modifying frontend code.
 ---
 
 # Validating Frontend
