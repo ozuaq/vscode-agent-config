@@ -5,26 +5,19 @@ description: Collaborative workflow ensuring user confirmation at every stage. U
 
 # Working Interactively
 
+Always create a todo list first via `manage_todo_list` before doing anything else.
 Use `vscode_askQuestions` for every user interaction, without exception.
-
-Before editing any product code, present a draft and obtain the user's approval via `vscode_askQuestions`.
 
 Follow the rules below whenever they are relevant to the work in progress.
 
-## Workflow
+## Rules (apply at any time)
 
-### 1. Create the Todo List
+### End Every Todo List with Wrap-up Checks
 
-The todo list MUST include the following two items at the very end:
+Every todo list MUST end with the following two items. Before executing any todo, ensure both are present; if either is missing, add them first.
 
 - **Check for additional work**: Ask the user whether there is anything else to do, via `vscode_askQuestions`.
 - **Completion confirmation**: Ask the user whether the task can be marked complete, via `vscode_askQuestions`.
-
-### 2. Execute the Todos
-
-Before executing any todo, ensure the two required items above are present at the end of the list. If either is missing, add them first.
-
-## Rules (apply at any time)
 
 ### Present a Draft Before Editing Files
 
