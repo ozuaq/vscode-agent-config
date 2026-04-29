@@ -1,13 +1,11 @@
 ---
 name: validating-frontend
-description: Run lint, build, and format checks after file edits. Auto-fix lint and format errors, diagnose build errors. Use after creating or modifying frontend code.
+description: Lints, builds, and formats frontend code. Use after editing frontend code.
 ---
 
 # Validating Frontend
 
-Run after creating or editing `.ts`, `.tsx`, `.css` files.
-
-## Flow
+## Workflow
 
 ### 1. Lint
 
