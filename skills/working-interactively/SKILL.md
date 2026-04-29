@@ -17,8 +17,8 @@ Follow the rules below whenever they are relevant to the work in progress.
 
 The todo list MUST include the following two items at the very end:
 
-- **Check for additional work**: Ask "Is there anything else to do?" via `vscode_askQuestions`
-- **Completion confirmation**: Ask "Can we mark this as complete?" via `vscode_askQuestions`
+- **Check for additional work**: Ask the user whether there is anything else to do, via `vscode_askQuestions`.
+- **Completion confirmation**: Ask the user whether the task can be marked complete, via `vscode_askQuestions`.
 
 ### 2. Execute the Todos
 
