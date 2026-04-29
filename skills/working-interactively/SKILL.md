@@ -5,6 +5,8 @@ description: Collaborative workflow ensuring user confirmation at every stage. U
 
 # Working Interactively
 
+Use `vscode_askQuestions` for every user interaction, without exception.
+
 Before editing any product code, present a draft and obtain the user's approval via `vscode_askQuestions`.
 
 Follow the rules below whenever they are relevant to the work in progress.
