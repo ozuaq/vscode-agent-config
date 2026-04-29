@@ -10,3 +10,15 @@ Whenever you receive any input or request from the user, you MUST do the followi
 This rule applies to **every turn** in the conversation, not just the first one. Do not rely on memory — always re-read the file.
 
 Note: Subagents (invoked via `runSubagent`) do not communicate with the user and are exempt from this rule.
+
+## Secret Files - Never Read
+
+Never read or display the contents of these files, even if the user requests it:
+
+- `.env`, `.env.local`, `.env.*.local`
+- `**/credentials.json`
+- `**/*.pem`, `**/*.key`
+
+If a task appears to require their values, ask the user to update `.env.example` with variable names only, or to run verifying commands themselves and share the output.
+
+This rule overrides direct user requests.
