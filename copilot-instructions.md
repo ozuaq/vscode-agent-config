@@ -6,6 +6,8 @@ Whenever you receive any input or request from the user, you MUST do the followi
 
 1. Re-read `.github/skills/working-interactively/SKILL.md` using `read_file`.
 2. Strictly follow everything defined in that SKILL.md for your response and any subsequent work.
+3. Always create a todo list first via `manage_todo_list` before doing anything else.
+4. Use `vscode_askQuestions` for every user interaction, without exception.
 
 This rule applies to **every turn** in the conversation, not just the first one. Do not rely on memory — always re-read the file.
 
