@@ -5,61 +5,40 @@ description: Collaborative workflow ensuring user confirmation at every stage. U
 
 # Working Interactively
 
-Ensure user confirmation and approval at every stage of work.
+Before editing any product code, present a draft and obtain the user's approval via `vscode_askQuestions`.
 
-Every interaction with the user MUST go through `vscode_askQuestions`. Never proceed without user input between steps.
+Follow the rules below whenever they are relevant to the work in progress.
 
 ## Workflow
 
-These steps represent the general flow of a task. Steps 1 and 2 typically happen in order. Other rules apply whenever relevant.
+### 1. Create the Todo List
 
-### 1. Task Planning
-
-Create a task list with `manage_todo_list`. Every task list MUST include these two steps at the end:
+The todo list MUST include the following two items at the very end:
 
 - **Check for additional work**: Ask "Is there anything else to do?" via `vscode_askQuestions`
 - **Completion confirmation**: Ask "Can we mark this as complete?" via `vscode_askQuestions`
 
-### 2. Step Execution
+### 2. Execute the Todos
 
-Progress through each step, updating `manage_todo_list` from in-progress → completed.
+Before executing any todo, ensure the two required items above are present at the end of the list. If either is missing, add them first.
 
 ## Rules (apply at any time)
 
-### Code Block Backup
+### Present a Draft Before Editing Files
 
-VS Code Chat UI may fail to render code blocks correctly. Whenever a chat message includes code blocks, always save a backup copy to `./tmp/<sessionId>/<chatNo>/<descriptive-name>.md`.
+Before editing any file, present a draft and obtain the user's approval via `vscode_askQuestions`:
 
-- Applies to **all code block outputs**: explanations, proposals, draft reviews, etc.
+- For **existing files**, show the changes as a diff.
+- For **new files**, show the full file content.
+- At the end of the draft, summarize all changes and list all items, if any, that need to be discussed with the user.
+
+### Explain Terminal Commands Before Execution
+
+Before running any command in the terminal, explain to the user why it is being run and what each sub-command and option does.
+
+### Store Ad-hoc Files Under `tmp/`
+
+When the user asks you to create any file other than product code or files under `.github/`, place it under `tmp/<sessionId>/`.
+
 - `sessionId`: First 8 characters of the UUID from `{{VSCODE_TARGET_SESSION_LOG}}` path
-- `chatNo`: Sequential number within the session (starting from 1)
-- `descriptive-name`: A name reflecting the content (e.g., `auth-changes.md`)
-- Save automatically without user confirmation
-
-### Draft Review Before File Editing
-
-Before editing any file:
-
-1. Present a draft of the changes to the user, clearly separated into:
-   - **Plan Overview**: Confirmed direction and scope of changes
-   - **Undecided Items**: Open questions or items requiring user input via `vscode_askQuestions`
-   - Present changes for **existing files** in **diff format**
-   - Present **new files** with full code blocks
-   - Include **explanatory comments** in the draft describing the intent of each change
-2. Ask via `vscode_askQuestions`: "Shall I proceed with this draft?"
-3. Do NOT edit until all "Undecided Items" are resolved and approval is given
-4. When applying changes to actual files, do NOT include the explanatory comments from the draft — keep code clean
-
-### Terminal Command Explanation
-
-Before running any command in the terminal:
-
-1. Save a detailed explanation to `./tmp/<sessionId>/<chatNo>/<descriptive-name>.md` containing:
-   - **Command**: The full command being executed
-   - **Purpose**: What the command does and why it's being run
-   - **Breakdown**: Each sub-command and option with a detailed explanation
-2. Then execute the command in the terminal
-
-### Tmp File Scope
-
-The `./tmp/` directory contains session-specific files. Only read files under the current session's directory (`./tmp/<sessionId>/`). Never read or reference tmp files from other sessions — they are irrelevant context.
+- Only read files under the current session's directory (`tmp/<sessionId>/`). Never read or reference tmp files from other sessions.
