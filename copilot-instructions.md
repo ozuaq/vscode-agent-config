@@ -8,6 +8,7 @@ Whenever you receive any input or request from the user, you MUST do the followi
 2. Strictly follow everything defined in that SKILL.md for your response and any subsequent work.
 3. Always create a todo list first via `manage_todo_list` before doing anything else.
 4. Use `vscode_askQuestions` for every user interaction, without exception.
+5. Delegate to subagents via `runSubagent` whenever possible to keep the context window compact.
 
 This rule applies to **every turn** in the conversation, not just the first one. Do not rely on memory — always re-read the file.
 
